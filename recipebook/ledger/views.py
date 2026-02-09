@@ -35,11 +35,11 @@ RECIPES = [
 ]
 
 def recipe_list(request):
-    return render(request, 'recipes/recipe_list.html',)
+    return render(request, 'recipes/recipe_list.html', {'recipes': RECIPES})
 
 def recipe1(request):
     return render(request, 'recipes/recipe.html', {'recipe': RECIPES[0]})
 
-def recipe1(request):
+def recipe2(request):
     return render(request, 'recipes/recipe.html', {'recipe': RECIPES[1]})
 
