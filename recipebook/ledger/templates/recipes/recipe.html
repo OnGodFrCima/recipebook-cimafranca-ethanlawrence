@@ -1,0 +1,8 @@
+<header><h1>Recipe Book</h1></header>
+
+<h2>{{ recipe.name }}</h2>
+<ul>
+  {% for ing in recipe.ingredients %}
+    <li>{{ ing.name }} — {{ ing.quantity }}</li>
+  {% endfor %}
+</ul>
