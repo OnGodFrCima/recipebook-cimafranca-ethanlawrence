@@ -2,7 +2,9 @@
 
 <h2>{{ recipe.name }}</h2>
 <ul>
-  {% for ing in recipe.ingredients %}
-    <li>{{ ing.name }} — {{ ing.quantity }}</li>
+  {% for ing in recipe.ingredients.all  %}
+    <li>{{ ing.ingredient.name }} — {{ ing.quantity }}</li>
+  {% empty %}
+    <li>No ingredients found.</li>
   {% endfor %}
 </ul>

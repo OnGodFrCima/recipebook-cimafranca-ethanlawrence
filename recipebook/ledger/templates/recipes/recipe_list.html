@@ -1,7 +1,9 @@
 <header><h1>Recipe Book</h1></header>
 
 <ul>
-  {% for r in recipes %}
-    <li><a href="{{ r.link }}">{{ r.name }}</a></li>
+  {% for recipe in recipes %}
+    <li><a href = "{{recipe.get_absolute_url}}">{{recipe.name}}</a></li>
+    {% empty %}
+      <li> No recipes found.</li>
   {% endfor %}
 </ul>
