@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-
+from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 def bio_length_error(value):
@@ -41,8 +41,8 @@ class Recipe(models.Model):
     
 class RecipeIngredient(models.Model):    
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name = "ingredients")
-    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE, related_name = "recipe")
-    quantity = models.CharField(max_length = 100)
+    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE, related_name = "recipes")
+    quantity = models.CharField(max_length=100)
     
     def __str__(self):
         return f"{self.recipe.name}: {self.quantity} {self.ingredient.name}"
